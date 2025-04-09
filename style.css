@@ -1,0 +1,191 @@
+:root {
+    --black: #000000;
+    --white: #ffffff;
+    --gray: rgba(30, 30, 30, 0.8);
+    --accent: rgba(255, 255, 255, 0.7);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: 'Courier New', monospace;
+    background: url('assets/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: var(--white);
+    overflow-x: hidden;
+    transition: background-position 0.05s linear;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
+    z-index: -1;
+}
+
+.terminal {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 2rem; /* Padding augmenté */
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.music-controls {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 100;
+    background: rgba(30, 30, 30, 0.8);
+    padding: 8px 12px;
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--accent);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+#music-toggle {
+    background: transparent;
+    color: var(--white);
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+#music-toggle:hover {
+    color: var(--accent);
+}
+
+#volume-control {
+    width: 80px;
+    cursor: pointer;
+    accent-color: var(--accent);
+}
+
+.profile-mask {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 3rem; /* Marge augmentée */
+    border: 3px solid var(--white);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(30%) contrast(110%);
+    transition: all 0.5s ease;
+}
+
+.profile-img:hover {
+    filter: grayscale(0%) contrast(100%);
+    transform: scale(1.05);
+}
+
+h1 {
+    font-size: 3.5rem; /* Taille augmentée */
+    margin-bottom: 2.5rem;
+    letter-spacing: 6px; /* Espacement augmenté */
+    text-transform: uppercase;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.6); /* Ombre plus visible */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.discord-logo {
+    width: 36px; /* Légèrement plus grand */
+    height: 36px;
+    display: inline-flex;
+    transition: all 0.3s ease;
+    opacity: 0.8;
+}
+
+.discord-logo svg {
+    width: 100%;
+    height: 100%;
+}
+
+.discord-logo:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.message-container {
+    margin-top: 3rem;
+}
+
+.message {
+    background-color: var(--gray);
+    border-left: 4px solid var(--accent); /* Bordure plus épaisse */
+    padding: 2rem; /* Padding augmenté */
+    margin: 2.5rem auto; /* Marge augmentée */
+    width: 80%;
+    backdrop-filter: blur(8px);
+    border-radius: 0 8px 8px 0; /* Bordures plus arrondies */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 140px; /* Hauteur augmentée */
+}
+
+.message p {
+    margin: 0.8rem 0; /* Espacement augmenté */
+    text-align: center;
+    width: 100%;
+    font-size: 1.4rem; /* Taille de texte augmentée */
+    line-height: 1.8; /* Interligne amélioré */
+}
+
+.message p.soon {
+    font-size: 1.8rem; /* Texte "SOON" plus grand */
+    font-weight: bold;
+    margin-top: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.cursor {
+    animation: blink 1s step-end infinite;
+    margin-top: 3rem;
+    font-size: 1.8rem; /* Taille augmentée */
+}
+
+.typing-effect {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid var(--white); /* Bordure plus épaisse */
+    animation: typing 3.5s steps(40, end);
+    font-size: 1.4rem; /* Taille de texte augmentée */
+}
+
+.delay {
+    animation-delay: 1.5s;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
